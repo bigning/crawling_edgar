@@ -13,6 +13,8 @@ import urllib
 import gzip
 
 def download(start_year, end_year):
+    if not os.path.exists('./masters'):
+        os.mkdir('./masters')
     for year in range(start_year, end_year + 1):
         for i in range(1,5):
             print("downloading master file of %dQTR%d: "%(year, i))

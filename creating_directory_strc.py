@@ -10,6 +10,8 @@ def create_directory():
     cik2dir_name = {}
     dir_name = '000'
     root_dir = './data/'
+    if not os.path.exists(root_dir):
+        os.mkdir(root_dir)
     if not os.path.exists(root_dir + dir_name):
         os.mkdir(root_dir + dir_name)
 
