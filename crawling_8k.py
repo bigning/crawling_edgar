@@ -10,6 +10,8 @@ def crawl_8k():
     f.close()
     lines = lines[1:]
 
+    match_file = open('matched.8k', 'w')
+
     save_dir = './8k/'
     if not os.path.exists(save_dir):
         os.mkdir(save_dir)
@@ -43,6 +45,9 @@ def crawl_8k():
                 save_name = dir_full_name + dat_line_arr[3].strip(' ')
                 url_str = 'http://www.sec.gov/Archives/'+dat_line_arr[4]
                 urllib.urlretrieve(url_str, save_name)
+                match_file.writelines(save_name + '\n')
+
+    match_file.close()
 
 if __name__=='__main__':
     crawl_8k()
