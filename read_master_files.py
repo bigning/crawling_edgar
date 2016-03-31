@@ -52,8 +52,8 @@ def read_masters():
                 if '424B' in line_arr[2]:
                     code424b += 1
 
-            stat_file.writelines('%d, %d, %s, %d, %d, %d, %d, %d, %d, %d, %d, %d\n'
-                    %(file_index, len(lines), cik, tenk, tenq, eightk, sixk, fourk, thirteeng, thirteend, thirteenf, code424b))
+            stat_file.writelines('%s, %d, %s, %d, %d, %d, %d, %d, %d, %d, %d, %d\n'
+                    %(master_path+dir_name+'/' + dat_filename, len(lines), cik, tenk, tenq, eightk, sixk, fourk, thirteeng, thirteend, thirteenf, code424b))
             file_index += 1
         dir_index += 1
     stat_file.close()
